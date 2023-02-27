@@ -1,5 +1,5 @@
 ---
-title: Results & Conclusion
+title: Model & Results
 layout: landing
 description:
 image: assets/images/pic07.jpg
