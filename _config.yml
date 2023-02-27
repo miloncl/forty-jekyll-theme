@@ -3,7 +3,7 @@ title: System Usage Analysis
 subtitle:
 email:
 description:
-baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
+baseurl: "/system-usage-analysis-website" # the subpath of your site, e.g. /blog
 url: https://miloncl.github.io
 author:
 street_address:
