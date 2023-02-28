@@ -1,13 +1,41 @@
 ---
-layout: post
+layout: page
 title: EDA
 description:
 image: assets/images/pic11.jpg
 nav-menu: true
 ---
 
-Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.
+<!-- Main -->
+<div id="main" class="alt">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>Exploratory Data Analysis</h1>
+		</header>
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.
+<h2 id="content">Hidden Markov Model</h2>
+<p>Hidden Markov Model (HMM) is a statistical model to predict the next value based on the 
+sequence of the previous states. It uses the Markov chain which is a sequence of possible 
+events where the probability of each event only depends on the state attained in the previous 
+event. [13] To be able to mimic this, we create a transition and emission matrix.
+</p>
+<div class="row">
+	<div class="6u 12u$(small)">
+		<h3>Transition Matrix</h3>
+		<p>A transition matrix consists of the probabilities of going from one executable file 
+		to another.</p>
+		
+	</div>
+	<div class="6u$ 12u$(small)">
+		<h3>Emission Matrix</h3>
+		<p>An emission matrix consists of the probabilities of going from one executable file to 
+		another app or tab</p>
+	</div>
+</div>
+</div>
+</section>
+
+</div>
