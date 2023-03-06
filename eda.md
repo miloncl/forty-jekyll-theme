@@ -28,14 +28,14 @@ event. [13] To be able to mimic this, we create a transition and emission matrix
 		<p>A transition matrix consists of the probabilities of going from one executable file 
 		to another. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>cmd.exe</i></b> can be calculated as shown below.</p>
-		<span class="image fit"><img src="{% link assets/images/HMM/transition.png %}" alt="" /></span>
+		<span class="image fit"><img src="{% link assets/images/HMM/transition.png %}" alt="Transition" /></span>
 	</div>
 	<div class="6u$ 12u$(small)">
 		<h3>Emission Matrix</h3>
 		<p>An emission matrix consists of the probabilities of going from one executable file to 
 		another app or tab. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>google docs</i></b> can be calculated as shown below.</p>
-		<span class="image fit"><img src="{% link assets/images/HMM/emission.png %}" alt="" /></span>
+		<span class="image fit"><img src="{% link assets/images/HMM/emission.png %}" alt="Emmission" /></span>
 	</div>
 </div>
 
