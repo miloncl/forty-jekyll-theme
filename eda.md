@@ -29,7 +29,7 @@ event. [13] To be able to mimic this, we create a transition and emission matrix
 		to another. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>cmd.exe</i></b> can be calculated as shown below.</p>
 		<span class="image fit">
-		    <img src="{% link system-usage-analysis-website/assets/images/transition.png %}" alt="Transition" />
+		    <img src="/system-usage-analysis-website/assets/images/transition.png" alt="Transition" />
 		</span>
 	</div>
 	<div class="6u$ 12u$(small)">
@@ -38,7 +38,7 @@ event. [13] To be able to mimic this, we create a transition and emission matrix
 		another app or tab. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>google docs</i></b> can be calculated as shown below.</p>
 		<span class="image fit">
-		    <img src="{% link system-usage-analysis-website/assets/images/emission.jpg %}" alt="Emission" />
+		    <img src="/system-usage-analysis-website/assets/images/emission.jpg" alt="Emission" />
         </span>
 	</div>
 </div>
