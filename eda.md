@@ -35,7 +35,7 @@ event. [13] To be able to mimic this, we create a transition and emission matrix
 		<p>An emission matrix consists of the probabilities of going from one executable file to 
 		another app or tab. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>google docs</i></b> can be calculated as shown below.</p>
-		<span class="image fit"><img src="{% link assets/images/emission.png %}" alt="Emission" /></span>
+		<span class="image fit"><img src="{% link assets/images/emission.jpg %}" alt="Emission" /></span>
 	</div>
 </div>
 
