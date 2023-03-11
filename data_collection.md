@@ -12,6 +12,110 @@ nav-menu: true
 <section id="one">
 	<div class="inner">
 		<header class="major">
+			<h1>Data Collection</h1>
+		</header>
+
+<h2 id="content">Overview</h2>
+<p>During the first 10 weeks, we constantly wrote code to record different kinds of data from our 
+individual desktops in relation to our system usage data. To accomplish this, we first familiarized 
+ourselves with the Intel® System Usage Report (SUR), a data-collection and analysis framework that 
+enables us to anonymously gather data usage from each device and analyze such data from multiple 
+devices [5]. Accompanying the Intel® SUR collector, the ESRV (environment server) toolchain was 
+also introduced and got set up on the machine on which we collected the data. We then studied the 
+XLSDK User Guide to develop various input libraries (ILs) such as 
+</p>
+<div class="row">
+	<!-- Break -->
+	<div class="4u 12u$(medium)">
+		<h3> </h3>
+		<p> </p>
+	</div>
+	<div class="4u 12u$(medium)">
+		<ul>
+		    <b>
+            <li>Mouse-Input IL</li>
+            <li>User-Wait IL</li>
+            <li>Mouse-Hook IL</li>
+            <li>Foreground Window IL</li>
+            <li>Desktop Mapper IL</li>
+            </b>
+        </ul>
+    </div>
+	<div class="4u$ 12u$(medium)">
+		<h3> </h3>
+		<p> </p>
+	</div>
+</div>
+<p></p>
+<p>In general, each one of these input libraries extracts data alongside the timestamps, and we will 
+further explain these input libraries as well as their functions in the below section.</p>
+
+<hr class="major" />
+
+<h2 id="content">Mouse-Input IL</h2>
+<p> The Mouse-Input IL was used to familiarize ourselves with the Windows machine and help us delve 
+into understanding ESRV plus SUR using XLSDK. We incorporated static_standard_input sample template 
+and step by step instructions provided by the Intel team to build this input library. The main 
+purpose of Mouse-Input IL is to capture the mouse (X, Y) positions in pixels, with or without noise 
+[11]. We control the intervals in which we collect the data. Furthermore, we update the Mouse-Input 
+to also track the noise in the X and Y positions by applying a 1D Kalman predictor per dimension.
+</p>
+
+<hr class="major" />
+
+<h2 id="content">User-Wait IL</h2>
+<p>The User-Wait is the next input library we implemented. The User-Wait IL is used to retrieve 
+the cursor type and its timestamp. We had to build a collector thread that monitored the state 
+of the cursor icon during intervals. Once again, the span of these intervals can be controlled 
+by us, which allows adjustment in the amount of data collected. The collected data – which 
+describes the cursor – can vary from a standard arrow to an arrow with a spinning wheel. We also 
+collected data using this input library on whether the mouse is static or dynamic.</p>
+
+<hr class="major" />
+
+<h2 id="content">Mouse-Hook IL</h2>
+<p>The general purpose of this input library is to use a system hook that can track the UI objects 
+clicked by the mouse. Whenever we use the mouse, it generates a message, and the hook will notify 
+the operating system about this information. Some inputs that we collect from the mouse hook 
+are the X, and Y positions in pixels, the clicked UI object’s name, ID, root ID, class name, style, 
+extended style, and the clicked UI object’s owning process image as shown in the following database.
+</p>
+
+<hr class="major" />
+
+<h2 id="content">Foreground Window IL</h2>
+<p>We use the Foreground Window input library to extract and log the application's name that sits 
+the furthest up front, along with its position, size, and other information. We implemented two 
+events as triggers for this input library; they are the mouse click and the time tick. We detect 
+a change in the foreground window using the mouse click, and we use the time tick in cases where 
+there is no mouse click, but there exists a change to the foreground window, such as when using 
+the task manager. While collecting the data, we make sure that no private information about the user
+is being recorded. We collect the module name (.exe), the window's class name while making sure we 
+don't collect the path information to keep the privacy of the user. In addition, the window 
+rectangle’s dimensions are recorded by retrieving the X, and Y coordinates on the upper-left and 
+lower-right corners using the API named GetWindowRect() and the object type RECT (which is short 
+for “rectangle”). Lastly, we can verify if the window app is immersive and is hung or not by using 
+IsImmersiveProcess() and IsHungAppWindow() functions. In particular, “is_immersive” checks if the 
+application is a Window Store application, and we capture “is_hung”, which checks if the 
+application is responsive or not.</p>
+
+<hr class="major" />
+
+<h2 id="content">Desktop Mapper</h2>
+<p></p>
+
+</div>
+</section>
+
+</div>
+
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
 			<h1>Elements</h1>
 		</header>
 
@@ -104,7 +208,7 @@ Finally, this is a <a href="#">link</a>.</p>
 			<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
 		</ul>
 		<ul class="icons">
-			<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon alt fa-file"><span class="label">Twitter</span></a></li>
 			<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
 			<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
 		</ul>
