@@ -104,6 +104,8 @@ other windows, and the bottom window is overlapped by all other windows on the z
 Additionally, just like the Foreground Window IL, we capture if the window “is_immersive” and 
 “is_hung”.</p>
 
+<hr class="major" />
+
 <p>The data collected from these ILs are crucial factors in keeping track of user-app interactions, 
 with specific records of the mouse locations, changes in the user interface, as well as user 
 activities. Consequently, we will be able to understand the overall patterns of using the Windows 
