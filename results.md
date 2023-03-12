@@ -42,7 +42,70 @@ event. [13] To be able to mimic this, we create a transition and emission matrix
         </span>
 	</div>
 </div>
+
+<h2 id="content">Long Short-term Memory Model</h2>
+<p>The Long Short-Term Memory (LSTM) model is a type of recurrent neural network (RNN) 
+that is designed to overcome the vanishing gradient problem, which is a common issue with 
+traditional RNNs. LSTMs are widely used in natural language processing, speech recognition, and image recognition tasks.</p>
+<div class="row">
+	<div class="4u 12u$(small)">
+		<h3>Memory Cells</h3>
+		<p>At the core of the LSTM model are memory cells, which can store information for a long 
+            time. The model uses a combination of three gates - input, forget, and output gates - to 
+            regulate the flow of information into and out of the memory cells. The input gate controls
+            how much new information is added to the memory cells, the forget gate determines which information 
+            is removed from the memory cells, and the output gate controls how much information is read from the
+            memory cells.</p>
+	</div>
+	<div class="4u 12u$(small)">
+		<h3>Cell State</h3>
+		<p>The LSTM model also has a cell state that runs along with the memory cells. The cell state
+            carries information across different time steps and can be modified through the use of the
+            gates. The model's ability to selectively add or remove information from the memory cells 
+            and cell state, as well as its ability to remember information over long periods of time, 
+            makes it well-suited for handling sequential data.</p>
+	</div>
+	<div class="4u 12u$(small)">
+		<h3>Training + Back Propagation</h3>
+		<p>During the training process, the model learns to optimize the weights of the gates and memory
+            cells through backpropagation, where the error from the output is propagated back through time.
+            This allows the model to make more accurate predictions over time as it learns to capture the 
+            patterns and relationships in the input data..</p>
+	</div>
+</div>
+<p></p>
+    <h3>Implementation</h3>
+		<p>Applying this model to our collected data proved to provide very powerful insights. Using the 
+            collected data and some data manipulation, we are capable of providing predictions regarding
+            the total amount of time a particular user spends using a particular process on any given day.
+            Being able to predict this information greatly assists in the optimization of the user's interface
+            overall and furthermore can assist in the overall goal of predicting the user's next used application.
+        </p>
+    <h4>Input Matrix</h4>
+    <p>The input matrix used to predict the total time a user spends on a given application on a given day looks 
+        similar to this:</p>
+    <span class="image fit">
+        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 8.13.42 AM.jpg" alt="Input Matrix" />
+    </span>
+    <p>Where each record of the input matrix refers to an application on a particular day. The columns 0 - 23 
+        each refer to the usage of the application in that given hour. The Application column is the numeric 
+        identifier for the process being used and the Total_Usage column is the total time the user spent using
+        the given process on that particular day. The Total_Usage column will serve as the true value column for 
+        the model.</p>
+    <h4>Model Setup</h4>
+    <p>The neural net we chose to utilize to produce insights from the input matrix looks like the following:</p>
+    <span class="image fit">
+        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 8.40.42 AM.jpg" alt="Model Structure" />
+    </span>
+    <h4>Results</h4>
+    <p>Using the above model, predictions can be made regarding the Total_Usage column. the prediction values are 
+        continuous in nature thus to properly understand the accuracy of the model a binning process was conducted 
+        based on thresholds that were determined through analysis of the distribution of the true and predicted values.
+        The distribution of these values can be seen below. Through the binning process we were able to determine that the 
+        model performs at about 70% accuracy</p>
+    <span class="image center">
+        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 9.52.40 AM.jpg" alt="Result Distribution" />
+    </span>
 	</div>
 </section>
-
-
+</div>
