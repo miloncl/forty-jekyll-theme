@@ -50,7 +50,6 @@ XLSDK User Guide to develop various input libraries (ILs) such as
 <p>In general, each one of these input libraries extracts data alongside the timestamps, and we will 
 further explain these input libraries as well as their functions in the below section.</p>
 
-<hr class="major" />
 
 <h2 id="content">Mouse-Input IL</h2>
 <p> The Mouse-Input IL was used to familiarize ourselves with the Windows machine and help us delve 
@@ -61,8 +60,6 @@ purpose of Mouse-Input IL is to capture the mouse (X, Y) positions in pixels, wi
 to also track the noise in the X and Y positions by applying a 1D Kalman predictor per dimension.
 </p>
 
-<hr class="major" />
-
 <h2 id="content">User-Wait IL</h2>
 <p>The User-Wait is the next input library we implemented. The User-Wait IL is used to retrieve 
 the cursor type and its timestamp. We had to build a collector thread that monitored the state 
@@ -71,7 +68,6 @@ by us, which allows adjustment in the amount of data collected. The collected da
 describes the cursor – can vary from a standard arrow to an arrow with a spinning wheel. We also 
 collected data using this input library on whether the mouse is static or dynamic.</p>
 
-<hr class="major" />
 
 <h2 id="content">Mouse-Hook IL</h2>
 <p>The general purpose of this input library is to use a system hook that can track the UI objects 
@@ -81,7 +77,6 @@ are the X, and Y positions in pixels, the clicked UI object’s name, ID, root I
 extended style, and the clicked UI object’s owning process image as shown in the following database.
 </p>
 
-<hr class="major" />
 
 <h2 id="content">Foreground Window IL</h2>
 <p>We use the Foreground Window input library to extract and log the application's name that sits 
@@ -99,10 +94,21 @@ IsImmersiveProcess() and IsHungAppWindow() functions. In particular, “is_immer
 application is a Window Store application, and we capture “is_hung”, which checks if the 
 application is responsive or not.</p>
 
-<hr class="major" />
 
 <h2 id="content">Desktop Mapper</h2>
-<p></p>
+<p>This input library when triggered, maps all the open application windows in z-order and stores 
+information about each one of them, such as their position on the screen and their individual sizes 
+as well. More specifically, the z-order “shows a window's position when given a list of overlapping 
+windows. The z-axis points outward from the screen, where the top window of the z-order overlaps all 
+other windows, and the bottom window is overlapped by all other windows on the z-order axis. 
+Additionally, just like the Foreground Window IL, we capture if the window “is_immersive” and 
+“is_hung”.</p>
+
+<p>The data collected from these ILs are crucial factors in keeping track of user-app interactions, 
+with specific records of the mouse locations, changes in the user interface, as well as user 
+activities. Consequently, we will be able to understand the overall patterns of using the Windows 
+machine of a user; then, we can predict when a user opens an app, make comparisons and understand 
+which apps take the longest time to launch, and make precise predictions in app launching time.</p>
 
 </div>
 </section>
