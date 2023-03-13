@@ -80,8 +80,6 @@ adds an additional layer of information regarding the distribution of chrome usa
 period of when the data was collected. In this way, these visualizations supplement one another well. On top of these visualizations,
  we also focused on the use of time series analysis to further note patterns in the data.</p>
 
-<hr class="major" />
-
 </div>
 </section>
 

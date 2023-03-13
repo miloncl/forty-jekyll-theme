@@ -60,13 +60,33 @@ purpose of Mouse-Input IL is to capture the mouse (X, Y) positions in pixels, wi
 to also track the noise in the X and Y positions by applying a 1D Kalman predictor per dimension.
 </p>
 
+<span class="image fit">
+    <img src="/system-usage-analysis-website/assets/images/mouseInputSample.png" alt="Mouse Data Sample" />
+</span>
+
+<p>In the above sample <b>Mouse(0)</b> and <b>Mouse(1)</b> are the X and Y position of the mouse in 
+pixels. <b>Mouse(2)</b> and <b>Mouse(3)</b> are the noisy X and Y position of the mouse in pixels. 
+<b>Mouse(4)</b> and <b>Mouse(5)</b> are the X and Y Kalman predicted positions in pixels. Using the 
+data collected we can create scatter plots. Below is two sample scatter plots of the mouse movements 
+when captured at a frequency of 1 Hz (left) and 100 Hz (right) 
+</p>
+
+<span class="image fit">
+    <img src="/system-usage-analysis-website/assets/images/mouseInputScatterplot.png" alt="Mouse Data Scatterplot" />
+</span>
+
 <h2 id="content">User-Wait IL</h2>
 <p>The User-Wait is the next input library we implemented. The User-Wait IL is used to retrieve 
 the cursor type and its timestamp. We had to build a collector thread that monitored the state 
 of the cursor icon during intervals. Once again, the span of these intervals can be controlled 
 by us, which allows adjustment in the amount of data collected. The collected data – which 
 describes the cursor – can vary from a standard arrow to an arrow with a spinning wheel. We also 
-collected data using this input library on whether the mouse is static or dynamic.</p>
+collected data using this input library on whether the mouse is static or dynamic. A few examples of 
+the loading icons that our IL records is seen below.</p>
+
+<span class="image center">
+    <img src="/system-usage-analysis-website/assets/images/userWaitLoadingIcons.png" alt="Loading Icons" />
+</span>
 
 
 <h2 id="content">Mouse-Hook IL</h2>
@@ -92,7 +112,22 @@ lower-right corners using the API named GetWindowRect() and the object type RECT
 for “rectangle”). Lastly, we can verify if the window app is immersive and is hung or not by using 
 IsImmersiveProcess() and IsHungAppWindow() functions. In particular, “is_immersive” checks if the 
 application is a Window Store application, and we capture “is_hung”, which checks if the 
-application is responsive or not.</p>
+application is responsive or not. An example of the data collected and the schema of the input library
+is shown below.</p>
+
+<div class="row">
+	<div class="6u 12u$(small)">
+		<span class="image fit">
+            <img src="/system-usage-analysis-website/assets/images/foregroundExample.png" alt="Top Used Apps" />
+        </span>
+	</div>
+	<div class="6u$ 12u$(small)">
+		<span class="image fit">
+            <img src="/system-usage-analysis-website/assets/images/foregroundSchema.png" alt="Top Used Apps" />
+        </span>
+	</div>
+</div>
+<p></p>
 
 
 <h2 id="content">Desktop Mapper</h2>
@@ -103,6 +138,10 @@ windows. The z-axis points outward from the screen, where the top window of the 
 other windows, and the bottom window is overlapped by all other windows on the z-order axis. 
 Additionally, just like the Foreground Window IL, we capture if the window “is_immersive” and 
 “is_hung”.</p>
+
+<span class="image center">
+    <img src="/system-usage-analysis-website/assets/images/zOrder.png" alt="Top Used Apps" />
+</span>
 
 <hr class="major" />
 
