@@ -20,9 +20,9 @@ nav-menu: true
 individual desktops in relation to our system usage data. To accomplish this, we first familiarized 
 ourselves with the Intel® System Usage Report (SUR), a data-collection and analysis framework that 
 enables us to anonymously gather data usage from each device and analyze such data from multiple 
-devices [5]. Accompanying the Intel® SUR collector, the ESRV (environment server) toolchain was 
+devices. <a href="zzreference.html">[5]</a> Accompanying the Intel® SUR collector, the ESRV (environment server) toolchain was 
 also introduced and got set up on the machine on which we collected the data. We then studied the 
-XLSDK User Guide to develop various input libraries (ILs) such as 
+XLSDK User Guide to develop various input libraries (ILs) such as: 
 </p>
 <div class="row">
 	<!-- Break -->
@@ -55,8 +55,8 @@ further explain these input libraries as well as their functions in the below se
 <p> The Mouse-Input IL was used to familiarize ourselves with the Windows machine and help us delve 
 into understanding ESRV plus SUR using XLSDK. We incorporated static_standard_input sample template 
 and step by step instructions provided by the Intel team to build this input library. The main 
-purpose of Mouse-Input IL is to capture the mouse (X, Y) positions in pixels, with or without noise 
-[11]. We control the intervals in which we collect the data. Furthermore, we update the Mouse-Input 
+purpose of Mouse-Input IL is to capture the mouse (X, Y) positions in pixels, with or without noise. 
+<a href="zzreference.html">[11]</a> We control the intervals in which we collect the data. Furthermore, we update the Mouse-Input 
 to also track the noise in the X and Y positions by applying a 1D Kalman predictor per dimension.
 </p>
 

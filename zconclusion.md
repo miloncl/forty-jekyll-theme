@@ -19,13 +19,13 @@ nav-menu: true
     <p> We have learned and written codes for the input libraries using Intel’s Software 
     Development Kit. These input libraries act as data collectors, which allow us to gather 
     information related to the system usage of a user. With data in our hands, we are able 
-    to Data Science. In contrast, “Without Data, there is no (Data) Science” [18]. In addition,
+    to Data Science. In contrast, “Without Data, there is no (Data) Science”. <a href="zzreference.html">[18]</a> In addition,
     by knowing how to collect data, we have control over how we want our data to be and what 
     should be collected to improve the analysis.</p>
     <p>As perceived from the result section, our HMM models are working pretty well with some 
     accuracies that go beyond 90%. The accuracy is defined by the percentage of correct predicted 
-    transition/emission probabilities. A prediction is deemed correct if it falls within the top n 
-    (num_apps) probabilities predicted. As the value of n increases, we receive a higher accuracy.</p>
+    transition/emission probabilities. A prediction is deemed correct if it falls within the top <b><i>n</i></b> 
+    (number of apps) probabilities predicted. As the value of <b><i>n</i></b> increases, we receive a higher accuracy.</p>
     <p>Additionally, we develop different experiments for our LSTM models. The prediction accuracies 
     are acceptable as they are all above 50% (the probability of a coin flip), which shows our models’ 
     functionality. Some can reach more than 90%, which seems to be an overfitting problem as we give 

@@ -20,7 +20,7 @@ nav-menu: true
 <p>Hidden Markov Model (HMM) is a statistical model to predict the next value based on the 
 sequence of the previous states. It uses the Markov chain which is a sequence of possible 
 events where the probability of each event only depends on the state attained in the previous 
-event. [13] To be able to mimic this, we create a transition and emission matrix.
+event. <a href="zzreference.html">[13]</a> To be able to mimic this, we create a transition and emission matrix.
 </p>
 <div class="row">
 	<div class="6u 12u$(small)">
