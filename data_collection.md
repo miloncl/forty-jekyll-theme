@@ -20,7 +20,7 @@ nav-menu: true
 individual desktops in relation to our system usage data. To accomplish this, we first familiarized 
 ourselves with the Intel® System Usage Report (SUR), a data-collection and analysis framework that 
 enables us to anonymously gather data usage from each device and analyze such data from multiple 
-devices. <a href="zzreference.html">[5]</a> Accompanying the Intel® SUR collector, the ESRV (environment server) toolchain was 
+devices. <a href="zzreference.html">[5]</a> Accompanying the Intel® SUR collector, the ESRV (energy server) toolchain was 
 also introduced and got set up on the machine on which we collected the data. We then studied the 
 XLSDK User Guide to develop various input libraries (ILs) such as: 
 </p>
