@@ -1,5 +1,5 @@
 ---
-title: Model & Results
+title: Models & Results
 layout: page
 description:
 image: assets/images/pic07.jpg
