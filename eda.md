@@ -73,12 +73,28 @@ the user’s usage time across the top 5 used apps.</p>
 <p></p>
 
 <p>As you can see the top most used app amongst both users is Google Chrome. However, the usage time for 
-them differ amongst both users. The applications that take up the top 5 for each user differs as well. The following charts 
+them differ amongst both users. The applications that take up the top 5 for each user differ as well. The following charts 
 below will show the usage of processes in terms of elapsed time for a given day. From visualizations like 
 the bar chart, we can see the largest contributor to the data collected is Chrome, but the area chart 
 adds an additional layer of information regarding the distribution of chrome usage across the time 
-period of when the data was collected. In this way, these visualizations supplement one another well. On top of these visualizations,
- we also focused on the use of time series analysis to further note patterns in the data.</p>
+period of when the data was collected. In this way, these visualizations supplement one another well.</p>
+ 
+<span class="image fit">
+    <img src="/system-usage-analysis-website/assets/images/areaGraph.png" alt="Area Chart" />
+</span>
+
+<p> On top of these visualizations,
+ we also focused on the use of time series analysis to further note patterns in the data. As it can be 
+ seen below, this user's usage pattern shows that on most days they use their PC either early in the morning
+ or during the evening while rarely using their PC during the middle of the day. We believe this to be 
+ characteristic of a student's usage of their PC.</p>
+ 
+<span class="image fit">
+    <img src="/system-usage-analysis-website/assets/images/processUsage.png" alt="Area Chart" />
+</span>
+
+<p>We further use this collected data and information we've found by analyzing and cleaning the data with
+our models to find further insights.</p>
 
 </div>
 </section>

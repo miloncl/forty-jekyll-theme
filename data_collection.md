@@ -35,7 +35,6 @@ XLSDK User Guide to develop various input libraries (ILs) such as:
 		    <b>
             <li>Mouse-Input IL</li>
             <li>User-Wait IL</li>
-            <li>Mouse-Hook IL</li>
             <li>Foreground Window IL</li>
             <li>Desktop Mapper IL</li>
             </b>
@@ -87,15 +86,6 @@ the loading icons that our IL records is seen below.</p>
 <span class="image center">
     <img src="/system-usage-analysis-website/assets/images/userWaitLoadingIcons.png" alt="Loading Icons" />
 </span>
-
-
-<h2 id="content">Mouse-Hook IL</h2>
-<p>The general purpose of this input library is to use a system hook that can track the UI objects 
-clicked by the mouse. Whenever we use the mouse, it generates a message, and the hook will notify 
-the operating system about this information. Some inputs that we collect from the mouse hook 
-are the X, and Y positions in pixels, the clicked UI object’s name, ID, root ID, class name, style, 
-extended style, and the clicked UI object’s owning process image. We incorporate this IL in the 
-Foreground Window IL.</p>
 
 
 <h2 id="content">Foreground Window IL</h2>

@@ -20,7 +20,9 @@ nav-menu: true
 <p>Hidden Markov Model (HMM) is a statistical model to predict the next value based on the 
 sequence of the previous states. It uses the Markov chain which is a sequence of possible 
 events where the probability of each event only depends on the state attained in the previous 
-event. <a href="zzreference.html">[13]</a> To be able to mimic this, we create a transition and emission matrix.
+event. <a href="zzreference.html">[13]</a> It also uses Output Independence which is the probability
+of observing an event relies on the state that directly produced this event. <a href="zzreference.html">[14]</a>
+ To be able to mimic this, we create a transition and emission matrix.
 </p>
 <div class="row">
 	<div class="6u 12u$(small)">
@@ -100,38 +102,37 @@ traditional RNNs. LSTMs are widely used in natural language processing, speech r
 	</div>
 </div>
 <p></p>
-    <h3>Implementation</h3>
-		<p>Applying this model to our collected data proved to provide very powerful insights. Using the 
-            collected data and some data manipulation, we are capable of providing predictions regarding
-            the total amount of time a particular user spends using a particular process on any given day.
-            Being able to predict this information greatly assists in the optimization of the user's interface
-            overall and furthermore can assist in the overall goal of predicting the user's next used application.
-        </p>
-    <h4>Input Matrix</h4>
-    <p>The input matrix used to predict the total time a user spends on a given application on a given day looks 
-        similar to this:</p>
-    <span class="image fit">
-        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 8.13.42 AM.jpg" alt="Input Matrix" />
-    </span>
-    <p>Where each record of the input matrix refers to an application on a particular day. The columns 0 - 23 
-        each refer to the usage of the application in that given hour. The Application column is the numeric 
-        identifier for the process being used and the Total_Usage column is the total time the user spent using
-        the given process on that particular day. The Total_Usage column will serve as the true value column for 
-        the model.</p>
-    <h4>Model Setup</h4>
-    <p>The neural net we chose to utilize to produce insights from the input matrix looks like the following:</p>
-    <span class="image fit">
-        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 8.40.42 AM.jpg" alt="Model Structure" />
-    </span>
-    <h4>Results</h4>
-    <p>Using the above model, predictions can be made regarding the Total_Usage column. the prediction values are 
-        continuous in nature thus to properly understand the accuracy of the model a binning process was conducted 
-        based on thresholds that were determined through analysis of the distribution of the true and predicted values.
-        The distribution of these values can be seen below. Through the binning process we were able to determine that the 
-        model performs at about 70% accuracy.</p>
-    <span class="image center">
-        <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 9.52.40 AM.jpg" alt="Result Distribution" />
-    </span>
+<p>Applying this model to our collected data proved to provide very powerful insights. Using the 
+    collected data and some data manipulation, we are capable of tackling two prediction problems:
+    <ol>
+		    <b>
+            <li>Predict the duration a user spends on an app <i>within an hour</i>, given the past time-series data.</li>
+            <li>Predict the total amount of time a particular user spends using a particular app on any given <i>day</i>.</li>
+            </b>
+        </ol>
+    Being able to predict this information greatly assists in the optimization of the user's interface
+    overall and furthermore can assist in the overall goal of predicting the user's next used application.
+</p>
+<h3>Results</h3>
+<p>After trying different models and feature engineering techniques, we conclude that the Bidirectional
+ LSTM provides the best possible result for our first prediction problem. It can capture both the peaks and
+  the low values of the time usage as shown in the figure below. In fact, the bidirectional characteristics allow the model to 
+  learn in both forward and backward directions. <a href="zzreference.html">[17]</a></p>
+
+<span class="image center">
+    <img src="/system-usage-analysis-website/assets/images/biLSTM.png" alt="Bidirectional LSTM" />
+</span>  
+ 
+<p> As for the second prediciton problem. We use a different model consisting of the usage time used of each application
+in a day split into each hour of the day, the total usage of that app during that day, and a value to differentiate
+each application. Using this model, we make predictions on the total usage. The prediction values are 
+    continuous in nature. Thus, to properly understand the accuracy of the model a binning process was conducted 
+    based on thresholds that were determined through analysis of the distribution of the true and predicted values.
+    The distribution of these values can be seen below. Through the binning process we were able to determine that the 
+    model performs at about 70% accuracy.</p>
+<span class="image center">
+    <img src="/system-usage-analysis-website/assets/images/Screenshot 2023-03-12 at 9.52.40 AM.jpg" alt="Result Distribution" />
+</span>
 	</div>
 </section>
 </div>
