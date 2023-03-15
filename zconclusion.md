@@ -19,7 +19,7 @@ nav-menu: true
     <p> We have learned and written codes for the input libraries using Intel’s Software 
     Development Kit. These input libraries act as data collectors, which allow us to gather 
     information related to the system usage of a user. With data in our hands, we are able 
-    to Data Science. In contrast, “Without Data, there is no (Data) Science”. <a href="zzreference.html">[18]</a> In addition,
+    to do Data Science. In contrast, “Without Data, there is no (Data) Science”. <a href="zzreference.html">[18]</a> In addition,
     by knowing how to collect data, we have control over how we want our data to be and what 
     should be collected to improve the analysis.</p>
     <p>As perceived from the result section, our HMM models are working pretty well with some 
