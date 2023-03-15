@@ -27,8 +27,7 @@ of observing an event relies on the state that directly produced this event. <a 
 <div class="row">
 	<div class="6u 12u$(small)">
 		<h3>Transition Matrix</h3>
-		<p>A transition matrix consists of the probabilities of going from one executable file 
-		to another. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
+		<p>A transition matrix consists of the probabilities of going from one executable to another. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>cmd.exe</i></b> can be calculated as shown below.</p>
 		<span class="image fit">
 		    <img src="/system-usage-analysis-website/assets/images/transition.png" alt="Transition" />
@@ -36,7 +35,7 @@ of observing an event relies on the state that directly produced this event. <a 
 	</div>
 	<div class="6u$ 12u$(small)">
 		<h3>Emission Matrix</h3>
-		<p>An emission matrix consists of the probabilities of going from one executable file to 
+		<p>An emission matrix consists of the probabilities of going from one executable to 
 		another app or tab. For example the probability of the user going from <b><i>chrome.exe</i></b> to 
 		<b><i>google docs</i></b> can be calculated as shown below.</p>
 		<span class="image fit">
